@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{page_title}}</title>
+
+    <!-- Подключение Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        .profile-card {
+            max-width: 500px;
+            margin: auto;
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-vk {
+            background-color: #0077FF;
+            color: white;
+        }
+
+        .btn-vk:hover {
+            background-color: #005FCC;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="profile-card text-center">
+            <!-- Информация о пользователе -->
+            <h3 class="fw-bold"> {{ user_name }}</h3>
+            <p class="text-muted">{{ user_login }}</p>
+
+            <hr>
+
+            <!-- Личная информация -->
+            <p><strong>Email:</strong> {{ user_email }}</p>
+            <p><strong>Город:</strong> {{ user_city }}</p>
+            <p><strong>О себе:</strong> {{ user_about_oneself }}</p>
+
+            <!-- Социальные сети -->
+            <div class="d-flex justify-content-center gap-3 my-3">
+                <a href="#" class="text-decoration-none"><i class="bi bi-vk fs-3 text-primary"></i></a>
+                <a href="#" class="text-decoration-none"><i class="bi bi-instagram fs-3 text-danger"></i></a>
+                <a href="#" class="text-decoration-none"><i class="bi bi-telegram fs-3 text-info"></i></a>
+            </div>
+
+            <!-- Кнопки -->
+            <div class="d-grid gap-2">
+                <a href="{% url 'EditProfile' %}" class="btn btn-vk">Редактировать профиль</a>
+                <a href="{% url 'ProfileHistory' %}" class="btn btn-outline-secondary">История голосов</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключение Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
