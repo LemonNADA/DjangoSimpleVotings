@@ -2,7 +2,7 @@ from django.http import HttpRequest, HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from .models import User
-from my_project.forms import UserCreationForm
+from my_project.my_site.forms import UserCreationForm
 
 @login_required
 def profile(request: HttpRequest) -> HttpResponse:
@@ -26,6 +26,9 @@ def edit_profile(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
+            form.login = request.POST.get("login", form.email)
+            form.password = request.POST.get("password", form.password)
+
             form.save()
 
         user_data.name = request.POST.get("name", user_data.name)
