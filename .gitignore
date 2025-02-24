@@ -1,0 +1,8 @@
+# Игнорируем миграции
+**/migrations/*.pyc
+**/migrations/*.pyo
+**/migrations/__pycache__/
+
+# Игнорируем кеши Python
+__pycache__/
+*.py[cod]
