@@ -47,10 +47,3 @@ def edit_profile(request: HttpRequest) -> HttpResponse:
         "user_about_oneself": user_data.about_oneself,
     }
     return render(request, "my_profile/edit_profile.html", context)
-
-
-def profile_history(request: HttpRequest) -> HttpResponse:
-    context: dict[str, str | int] = {
-        "page_title": "История голосов"
-        }
-    return render(request, "my_profile/profile_history.html", context)

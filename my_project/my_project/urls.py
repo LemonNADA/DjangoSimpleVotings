@@ -22,5 +22,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('profile/', views.profile, name="Profile"),
     path('profile/edit/', views.edit_profile, name="EditProfile"),
-    path('profile/history/', views.profile_history, name="ProfileHistory"),
 ]
